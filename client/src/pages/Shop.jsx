@@ -1,4 +1,4 @@
-import ProductCard, { type Product } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, SlidersHorizontal } from "lucide-react";
@@ -18,16 +18,12 @@ import journalImage from '@assets/generated_images/Leather_journal_product_54ece
 import blanketImage from '@assets/generated_images/Knitted_wool_blanket_product_aebfc7a4.png';
 import necklaceImage from '@assets/generated_images/Beaded_jewelry_necklace_product_5beea405.png';
 
-interface ShopProps {
-  onAddToCart: (product: Product) => void;
-}
-
-export default function Shop({ onAddToCart }: ShopProps) {
+export default function Shop({ onAddToCart }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("featured");
 
   //todo: remove mock functionality
-  const allProducts: Product[] = [
+  const allProducts = [
     { id: '1', name: 'Handwoven Wicker Basket', price: 45.99, image: basketImage, category: 'Home Decor' },
     { id: '2', name: 'Ceramic Pottery Bowl', price: 32.50, image: bowlImage, category: 'Tableware' },
     { id: '3', name: 'Macrame Wall Hanging', price: 58.00, image: macrameImage, category: 'Wall Art' },

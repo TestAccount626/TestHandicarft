@@ -6,18 +6,17 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CartDrawer, { type CartItem } from "@/components/CartDrawer";
+import CartDrawer from "@/components/CartDrawer";
 import Home from "@/pages/Home";
 import Shop from "@/pages/Shop";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
-import type { Product } from "@/components/ProductCard";
 
 function Router() {
   const [cartOpen, setCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleAddToCart = (product: Product) => {
+  const handleAddToCart = (product) => {
     setCartItems((prev) => {
       const existing = prev.find((item) => item.id === product.id);
       if (existing) {
@@ -31,13 +30,13 @@ function Router() {
     });
   };
 
-  const handleUpdateQuantity = (id: string, quantity: number) => {
+  const handleUpdateQuantity = (id, quantity) => {
     setCartItems((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity } : item))
     );
   };
 
-  const handleRemoveItem = (id: string) => {
+  const handleRemoveItem = (id) => {
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 

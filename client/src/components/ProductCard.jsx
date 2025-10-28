@@ -3,20 +3,7 @@ import { Card } from "@/components/ui/card";
 import { ShoppingCart, Heart } from "lucide-react";
 import { useState } from "react";
 
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  category?: string;
-}
-
-interface ProductCardProps {
-  product: Product;
-  onAddToCart?: (product: Product) => void;
-}
-
-export default function ProductCard({ product, onAddToCart }: ProductCardProps) {
+export default function ProductCard({ product, onAddToCart }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   return (

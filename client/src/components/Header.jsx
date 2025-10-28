@@ -5,12 +5,7 @@ import { Link, useLocation } from "wouter";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-interface HeaderProps {
-  cartItemCount?: number;
-  onCartClick?: () => void;
-}
-
-export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) {
+export default function Header({ cartItemCount = 0, onCartClick }) {
   const [location] = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
 
@@ -24,14 +19,14 @@ export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) 
     <>
       {navLinks.map((link) => (
         <Link key={link.href} href={link.href}>
-          <a
-            className={`text-foreground hover-elevate active-elevate-2 px-4 py-2 rounded-md transition-colors ${
+          <span
+            className={`text-foreground hover-elevate active-elevate-2 px-4 py-2 rounded-md transition-colors cursor-pointer ${
               location === link.href ? "font-medium" : ""
             }`}
             data-testid={`link-${link.label.toLowerCase()}`}
           >
             {link.label}
-          </a>
+          </span>
         </Link>
       ))}
     </>
@@ -42,11 +37,11 @@ export default function Header({ cartItemCount = 0, onCartClick }: HeaderProps) 
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           <Link href="/">
-            <a className="flex items-center gap-2" data-testid="link-logo">
+            <span className="flex items-center gap-2 cursor-pointer" data-testid="link-logo">
               <h1 className="text-2xl font-serif font-semibold text-foreground">
                 Artisan
               </h1>
-            </a>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-2">

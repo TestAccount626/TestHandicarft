@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import ProductCard, { type Product } from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import heroImage from '@assets/generated_images/Artisan_crafting_pottery_hero_e2a8d6f3.png';
@@ -8,13 +8,9 @@ import bowlImage from '@assets/generated_images/Ceramic_pottery_bowl_product_792
 import macrameImage from '@assets/generated_images/Macrame_wall_hanging_product_82a169ff.png';
 import trayImage from '@assets/generated_images/Wooden_serving_tray_product_8ab8cf90.png';
 
-interface HomeProps {
-  onAddToCart: (product: Product) => void;
-}
-
-export default function Home({ onAddToCart }: HomeProps) {
+export default function Home({ onAddToCart }) {
   //todo: remove mock functionality
-  const featuredProducts: Product[] = [
+  const featuredProducts = [
     { id: '1', name: 'Handwoven Wicker Basket', price: 45.99, image: basketImage, category: 'Home Decor' },
     { id: '2', name: 'Ceramic Pottery Bowl', price: 32.50, image: bowlImage, category: 'Tableware' },
     { id: '3', name: 'Macrame Wall Hanging', price: 58.00, image: macrameImage, category: 'Wall Art' },

@@ -33,16 +33,16 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/shop">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-shop">
+                  <span className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-footer-shop">
                     Shop
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact">
-                  <a className="text-muted-foreground hover:text-foreground transition-colors" data-testid="link-footer-contact">
+                  <span className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer" data-testid="link-footer-contact">
                     Contact
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>

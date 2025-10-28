@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
-interface HeroProps {
-  title?: string;
-  subtitle?: string;
-  imageUrl?: string;
-}
-
 export default function Hero({
   title = "Handcrafted with Love",
   subtitle = "Discover unique, artisan-made treasures crafted by skilled hands",
   imageUrl,
-}: HeroProps) {
+}) {
   return (
     <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
       <div
